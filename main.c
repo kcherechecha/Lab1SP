@@ -2,9 +2,11 @@
 #include <string.h>
 #include <ctype.h>
 
+#define MAX_WORD_LENGTH 30
+
 int main () {
     FILE *fp;
-    char word[31];
+    char word[MAX_WORD_LENGTH];
     char vowels[] = "aeiou";
     char filePath[200]= "/Users/kcherechecha/CLionProjects/Lab1SP/";
     char fileName[100];
@@ -38,8 +40,7 @@ int main () {
                         duplicate = 1;
                     }
                 }
-                if(duplicate != 1)
-                    printf("%s\n", word);
+                if(duplicate != 1) printf("%s\n", word);
                 strcpy(uniqueWords[wordCount], word);
                 wordCount++;
             }
