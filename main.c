@@ -11,7 +11,7 @@ int main () {
     char filePath[200]= "/Users/kcherechecha/CLionProjects/Lab1SP/";
     char fileName[100];
     int wordCount = 0;
-    char uniqueWords[1000][31];
+    char uniqueWords[1000][MAX_WORD_LENGTH];
 
     printf("Введіть назву файлу: ");
     scanf("%s", fileName);
@@ -40,9 +40,11 @@ int main () {
                         duplicate = 1;
                     }
                 }
-                if(duplicate != 1) printf("%s\n", word);
-                strcpy(uniqueWords[wordCount], word);
-                wordCount++;
+                if(duplicate != 1) {
+                    printf("%s\n", word);
+                    strcpy(uniqueWords[wordCount], word);
+                    wordCount++;
+                }
             }
         }
     }
