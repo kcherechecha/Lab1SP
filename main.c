@@ -8,10 +8,12 @@ int main () {
     FILE *fp;
     char word[MAX_WORD_LENGTH + 1];
     char vowels[] = "aeiou";
-    char filePath[200];
+    char filePath[200]= "/Users/kcherechecha/CLionProjects/Lab1SP/";
+    char fileName[100];
 
-    printf("Введіть путь до файлу: ");
-    scanf("%s", filePath);
+    printf("Введіть назву файлу: ");
+    scanf("%s", fileName);
+    strcat(filePath, fileName);
 
     fp = fopen(filePath, "r");
     if (fp == NULL) {
