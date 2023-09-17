@@ -8,6 +8,8 @@ int main () {
     char vowels[] = "aeiou";
     char filePath[200]= "/Users/kcherechecha/CLionProjects/Lab1SP/";
     char fileName[100];
+    int wordCount = 0;
+    char uniqueWords[1000][31];
 
     printf("Введіть назву файлу: ");
     scanf("%s", fileName);
@@ -30,7 +32,16 @@ int main () {
                 }
             }
             if (vowelOnlyWord) {
-                printf("%s\n", word);
+                int duplicate = 0;
+                for (int i = 0; i < wordCount ; i++) {
+                    if (strcmp(uniqueWords[i], word) == 0)  {
+                        duplicate = 1;
+                    }
+                }
+                if(duplicate != 1)
+                    printf("%s\n", word);
+                strcpy(uniqueWords[wordCount], word);
+                wordCount++;
             }
         }
     }
